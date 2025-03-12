@@ -1,0 +1,22 @@
+.profile_photo {
+  background-color: grey;
+}
+
+.profile_photo:hover {
+  cursor: pointer;
+}
+
+.profile_photo_container {
+  display: flex;
+  justify-content: center;
+}
+
+.post_img {
+  object-fit: cover;
+}
+
+.post_card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}

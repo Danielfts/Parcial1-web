@@ -1,0 +1,22 @@
+.profile_container {
+  background-color: cadetblue;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.button_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.profile_photo {
+  background-color: grey;
+  max-width: 8rem;
+  max-height: 8rem;
+}
+
+.profile_card {
+  width: min(90vw, 20rem);
+}

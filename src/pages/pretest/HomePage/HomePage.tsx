@@ -49,6 +49,7 @@ const HomePageFooter: FunctionComponent = () => {
     bestRunningTime: "1:30",
     bestSwimmingTime: "1:30",
     bestCyclingTime: "1:30",
+    photoUrl: person,
   };
   const timeDataUrl = "https://my.api.mockaroo.com/time_data.json?key=c109b2f0";
   const fetchData = async () => {
@@ -72,7 +73,7 @@ const HomePageFooter: FunctionComponent = () => {
         {isSuccess ? (
           <>
             <Col>
-              <img src={person} alt="person" />
+              <img src={data.photoUrl || person} alt="person" className={styles.footer_photo}/>
             </Col>
             <Col>
               <span>{data.name}</span>

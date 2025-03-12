@@ -5,3 +5,14 @@
   font-size: 2rem;
   font-weight: 700;
 }
+
+.footer_photo {
+  width: 8rem;
+  height: 8rem;
+}
+
+.footer_row div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
