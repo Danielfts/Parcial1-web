@@ -11,8 +11,8 @@ import SportCardComponent from "../SportCard/SportCardComponent";
 import { ApiCardData, CardData } from "../types/CardData";
 import UserData from "../types/UserData";
 import styles from "./HomePage.module.scss";
-import person_swimming from "../../../assets/person_swimming.avif";
-import person_running from "../../../assets/person_running.jpg";
+import person_swimming from "../../../assets/person_swimming_sm2.jpg";
+import person_running from "../../../assets/person_running_md.jpg";
 import person_cycling from "../../../assets/person_biking.jpg";
 
 interface HomePageRowProps {

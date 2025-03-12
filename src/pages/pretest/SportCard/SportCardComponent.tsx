@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { Card } from "react-bootstrap";
 import styles from "./SportCardComponent.module.scss";
-import defaultImgUrl from "../../../assets/person_running.jpg";
+import defaultImgUrl from "../../../assets/person_running_md.jpg";
 import { CardData } from "../types/CardData";
 
 interface SportCardComponentProps {
