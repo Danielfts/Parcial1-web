@@ -3,6 +3,7 @@ import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import styles from "./DetailPage.module.scss";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router";
 interface DetailPageProps {
   type: "menu" | "stores" | "cart";
 }
@@ -58,6 +59,9 @@ const DetailPage: FunctionComponent<DetailPageProps> = ({ type }) => {
               </Carousel.Item>
             ))}
         </Carousel>
+      </Row>
+      <Row>
+        <Link to="/test/home">Go back to home</Link>
       </Row>
       <Row>
         {isSuccess &&
