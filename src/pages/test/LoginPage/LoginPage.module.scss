@@ -1,0 +1,14 @@
+.login_container {
+  min-height: 100vh;
+  display: flex;
+}
+
+.login_row {
+  flex-grow: 1;
+}
+
+.login_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

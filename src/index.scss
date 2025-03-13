@@ -1,1 +1,6 @@
 @use "bootstrap/scss/bootstrap";
+
+.main_container {
+  min-height: 100vh;
+  display: flex;
+}

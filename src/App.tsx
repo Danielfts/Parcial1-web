@@ -15,11 +15,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route path="/">
-            <Route index element={<Navigate to={"./test"} />}></Route>
-            <Route path="test" element={<TestLoginPage />}></Route>
-            <Route path="home" element={<TestHomePage />}></Route>
-            <Route path="detail" element={<TestDetailPage />}></Route>
+          <Route path="/test">
+            <Route index element={<Navigate to={"./login"} />}/>
+            <Route path="login" element={<TestLoginPage />}/>
+            <Route path="home" element={<TestHomePage />}/>
+            <Route path="menu" element={<TestDetailPage />}/>
+            <Route path="stores" element={<TestDetailPage />}/>
+            <Route path="cart" element={<TestDetailPage />}/>
           </Route>
           <Route path="/pretest">
             <Route index element={<Navigate to={"./login"} />}></Route>
