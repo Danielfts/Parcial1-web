@@ -1,0 +1,18 @@
+[
+  {
+    "imageUrl": "http://dummyimage.com/120x100.png/cc0000/ffffff",
+    "foodName": "salad"
+  },
+  {
+    "imageUrl": "http://dummyimage.com/192x100.png/5fa2dd/ffffff",
+    "foodName": "sushi"
+  },
+  {
+    "imageUrl": "http://dummyimage.com/195x100.png/dddddd/000000",
+    "foodName": "sushi"
+  },
+  {
+    "imageUrl": "http://dummyimage.com/223x100.png/5fa2dd/ffffff",
+    "foodName": "burrito"
+  }
+]

@@ -19,9 +19,9 @@ function App() {
             <Route index element={<Navigate to={"./login"} />}/>
             <Route path="login" element={<TestLoginPage />}/>
             <Route path="home" element={<TestHomePage />}/>
-            <Route path="menu" element={<TestDetailPage />}/>
-            <Route path="stores" element={<TestDetailPage />}/>
-            <Route path="cart" element={<TestDetailPage />}/>
+            <Route path="menu" element={<TestDetailPage type={"menu"}/>}/>
+            <Route path="stores" element={<TestDetailPage type={"stores"}/>}/>
+            <Route path="cart" element={<TestDetailPage type={"cart"}/>}/>
           </Route>
           <Route path="/pretest">
             <Route index element={<Navigate to={"./login"} />}></Route>

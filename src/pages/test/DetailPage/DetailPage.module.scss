@@ -1,0 +1,17 @@
+.header {
+  min-height: 6rem;
+  background-color: cadetblue;
+}
+
+.car_img {
+  min-height: 15rem;
+  max-height: 20rem;
+  object-fit: cover;
+  padding-bottom: 2rem;
+}
+
+.bot_card {
+  height: 100%;
+  padding: 0px;
+  min-height: 10rem;
+}
