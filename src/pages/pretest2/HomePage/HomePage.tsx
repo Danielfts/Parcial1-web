@@ -67,7 +67,7 @@ const HomePage: FunctionComponent = () => {
         <Row xs={2} sm={3} md={4} className="mt-5 gy-3">
           {Array(12)
             .fill(null)
-            .map((item, index) => {
+            .map((_, index) => {
               return (
                 <Col key={index}>
                   <Card className={`${styles.post_card} p0`} onClick={handleShow}>
