@@ -12,10 +12,32 @@ import TestDetailPage from "./pages/test/DetailPage/DetailPage";
 import TestLoginPage from "./pages/test/LoginPage/LoginPage";
 import TestHomePage from "./pages/test/MainPage/HomePage";
 
+const lang = navigator.language;
+const defaultLocale = "en";
+console.log(`Browser language: ${lang}`);
+const messages: { [key: string]: { [key: string]: string } } = {
+  en: enMessages,
+  es: esMessages,
+};
+
+const getLocale = () => {
+  const browserLocale = lang || defaultLocale;
+  const baseLocale = browserLocale.split("-")[0];
+  return messages[baseLocale] ? baseLocale : defaultLocale;
+};
+
+const getMessages = () => {
+  return messages[getLocale()];
+};
+
 const queryClient = new QueryClient();
 function App() {
   return (
-    <IntlProvider locale="es" defaultLocale="en" messages={esMessages}>
+    <IntlProvider
+      locale={navigator.language}
+      defaultLocale={defaultLocale}
+      messages={getMessages()}
+    >
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
