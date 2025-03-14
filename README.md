@@ -138,6 +138,9 @@ Para cada vista, el proceso de pensamiento para descomponer el problema en compo
     + **useIntl()** hook para internacionalizar mensajes definidos como variables (como el título de la vista de detalle).
     + \<FormattedMessage> para internacionalizar textos otros estáticos.
 
+![login](/readme_assets/login_ss.png)
+Puede hacer uso de los controles en la parte superior derecha de la vista login para cambiar el locale de la app entre español e inglés. También puede cambiar el idioma del browser.
+
 ## Resultados
 Durante la hora de clase fue posible:
 + Desarrollar las tres vistas
