@@ -39,7 +39,7 @@ const LocaleControls: FunctionComponent<LocaleControlsProps> = ({
         onClick={() => changeLocale("en")}
         disabled={locale === "en"}
       >
-        <img src={us} className={styles.country_flag} alt="spanish" />
+        <img src={us} className={styles.country_flag} alt="english" />
       </Button>
     </div>
   );
