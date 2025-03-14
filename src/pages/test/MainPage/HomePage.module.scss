@@ -20,8 +20,14 @@
   align-items: center;
 }
 
+.card_item {
+  border-width: 2px;
+  border-style: hidden;
+}
+
 .card_item:hover {
   cursor: pointer;
+  border-style: solid;
   border-color: antiquewhite;
   border-width: 2px;
 }
@@ -33,4 +39,14 @@
 
 .item_text {
   color: white;
+}
+
+.card_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_row {
+  align-items: center;
 }
