@@ -85,7 +85,7 @@ const LoginPage: FunctionComponent = () => {
         <Col md={7} className={`${styles.welcome_col}`}>
           <img src={foodBag} className={styles.logo} alt="logo" />
           <h1>
-            <FormattedMessage id="companyName" />
+            Too Good to Go
           </h1>
           <h2>
             <FormattedMessage id="slogan" />
