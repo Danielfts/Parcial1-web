@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import menu from "../../../assets/menu.png";
 import shopping_cart from "../../../assets/shopping_cart.png";
 import store from "../../../assets/store.png";
+import { FormattedMessage, useIntl } from "react-intl";
 
 interface DetailPageProps {
   type: "menu" | "stores" | "cart";
@@ -18,6 +19,7 @@ interface FoodData {
 }
 
 const DetailPage: FunctionComponent<DetailPageProps> = ({ type }) => {
+  const intl = useIntl();
   async function fetchFoodData() {
     const response = await axios.get<FoodData[]>(
       "https://gist.githubusercontent.com/Danielfts/fb5ac606e6a26c8bde565c261212bd9c/raw/92126f61dc3617000c32047100e765b5af0082c1/food_data.json"
@@ -37,15 +39,15 @@ const DetailPage: FunctionComponent<DetailPageProps> = ({ type }) => {
   let headerImg: string | null = "";
   switch (type) {
     case "stores":
-      title = "Stores";
+      title = intl.formatMessage({id:"stores"});
       headerImg = store;
       break;
     case "cart":
-      title = "Cart";
+      title = intl.formatMessage({id:"cart"});
       headerImg = shopping_cart;
       break;
     case "menu":
-      title = "Menu";
+      title = intl.formatMessage({id:"menu"});
       headerImg = menu;
       break;
 
@@ -92,7 +94,9 @@ const DetailPage: FunctionComponent<DetailPageProps> = ({ type }) => {
         </Carousel>
       </Row>
       <Row>
-        <Link to="/test/home">Go back to home</Link>
+        <Link to="/test/home">
+            <FormattedMessage id="homeGoBack"/>
+        </Link>
       </Row>
       <Row>
         {isSuccess &&
