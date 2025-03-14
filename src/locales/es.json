@@ -1,1 +1,13 @@
-{}
+{
+  "companyName": "Muy bueno para perderse",
+  "slogan": "Solución para el desperdicio de comida",
+  "username": "Nombre de usuario",
+  "password": "Contraseña", 
+  "forgotPassword": "¿Olvidó su contraseña?",
+  "login": "Iniciar Sesión",
+  "menu": "Menú",
+  "stores": "Tiendas",
+  "cart": "Carrito",
+  "loginGoBack": "Volver al inicio de sesión",
+  "homeGoBack": "Volver a la página principal"
+}

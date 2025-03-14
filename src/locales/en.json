@@ -1,1 +1,13 @@
-{}
+{
+  "companyName": "Too good to go",
+  "slogan": "Food wasting solution",
+  "username": "Username",
+  "password": "Password", 
+  "forgotPassword": "Forgot password?",
+  "login": "Log In",
+  "menu": "Menu",
+  "stores": "Stores",
+  "cart": "Cart",
+  "loginGoBack": "Go back to login",
+  "homeGoBack": "Go back to home"
+}
