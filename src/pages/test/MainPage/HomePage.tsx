@@ -5,6 +5,7 @@ import menu from "../../../assets/menu.png";
 import shopping_cart from "../../../assets/shopping_cart.png";
 import store from "../../../assets/store.png";
 import styles from "./HomePage.module.scss";
+import { FormattedMessage } from "react-intl";
 // import bg from "../../../assets/food_table.avif";
 // interface HomePageProps {
 
@@ -26,7 +27,9 @@ const HomePage: FunctionComponent = () => {
                 onClick={handleNavigate("menu")}
               >
                 <img className={styles.item_img} src={menu} />
-                <h1 className={styles.item_text}>Menu</h1>
+                <h1 className={styles.item_text}>
+                  <FormattedMessage id="menu"/>
+                </h1>
               </div>
             </Col>
             <Col className={styles.card_col}>
@@ -35,7 +38,9 @@ const HomePage: FunctionComponent = () => {
                 onClick={handleNavigate("stores")}
               >
                 <img className={styles.item_img} src={store} />
-                <h1 className={styles.item_text}>Stores</h1>
+                <h1 className={styles.item_text}>
+                  <FormattedMessage id="stores"/>
+                </h1>
               </div>
             </Col>
             <Col className={styles.card_col}>
@@ -44,13 +49,17 @@ const HomePage: FunctionComponent = () => {
                 onClick={handleNavigate("cart")}
               >
                 <img className={styles.item_img} src={shopping_cart} />
-                <h1 className={styles.item_text}>Cart</h1>
+                <h1 className={styles.item_text}>
+                  <FormattedMessage id="cart"/>
+                </h1>
               </div>
             </Col>
           </Row>
         </Card.Body>
         <Card.Footer>
-          <Button onClick={handleNavigate("login")}>Volver a login</Button>
+          <Button onClick={handleNavigate("login")}>
+            <FormattedMessage id="loginGoBack"/>
+          </Button>
         </Card.Footer>
       </Card>
     </Container>
