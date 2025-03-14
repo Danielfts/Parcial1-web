@@ -1,13 +1,42 @@
-import { ChangeEvent, FormEvent, FunctionComponent, useState } from "react";
+import co from "@/assets/colombia.png";
+import us from "@/assets/united-states.png";
+import LocaleContext from "@/context/LocaleContext";
+import {
+  ChangeEvent,
+  FormEvent,
+  FunctionComponent,
+  useContext,
+  useState,
+} from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import styles from "./LoginPage.module.scss";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useNavigate } from "react-router";
 import foodBag from "../../../assets/food_bag.png";
 import plateTable from "../../../assets/plate_table.jpg";
-import { FormattedMessage, useIntl } from "react-intl";
-// interface LoginPageProps {
+import styles from "./LoginPage.module.scss";
 
-// }
+interface LocaleControlsProps {
+  changeLocale: (_: string) => void;
+}
+
+const LocaleControls: FunctionComponent<LocaleControlsProps> = ({
+  changeLocale,
+}) => {
+  return (
+    <div className={styles.locale_controls}>
+      <Button
+        variant={"light"}
+        onClick={() => changeLocale("es")}
+        className={`me-2`}
+      >
+        <img src={co} className={styles.country_flag} alt="spanish" />
+      </Button>
+      <Button variant={"light"} onClick={() => changeLocale("en")}>
+        <img src={us} className={styles.country_flag} alt="spanish" />
+      </Button>
+    </div>
+  );
+};
 
 interface FormData {
   username: string;
@@ -16,6 +45,7 @@ interface FormData {
 
 const LoginPage: FunctionComponent = () => {
   const navigate = useNavigate();
+  const { changeLocale } = useContext(LocaleContext);
   const intl = useIntl();
   const usernamePlaceholder = intl.formatMessage({ id: "username" });
   const passwordPlaceholder = intl.formatMessage({ id: "password" });
@@ -41,13 +71,14 @@ const LoginPage: FunctionComponent = () => {
       navigate("/test/home");
     }
   };
+
   return (
     <Container fluid className={styles.login_container}>
       <Row className={styles.login_row}>
         <Col md={7} className={`${styles.welcome_col}`}>
           <img src={foodBag} className={styles.logo} alt="logo" />
           <h1>
-            <FormattedMessage id="companyName"/>
+            <FormattedMessage id="companyName" />
           </h1>
           <h2>
             <FormattedMessage id="slogan" />
@@ -59,7 +90,8 @@ const LoginPage: FunctionComponent = () => {
           />
         </Col>
         <Col md={5} className={styles.login_col}>
-          <Form onSubmit={handleSubmit}>
+          <LocaleControls changeLocale={changeLocale} />
+          <Form onSubmit={handleSubmit} className={styles.login_form}>
             <Form.Group>
               <Form.Label></Form.Label>
               <Form.Control
@@ -80,12 +112,12 @@ const LoginPage: FunctionComponent = () => {
                 onChange={handleChange}
                 placeholder={passwordPlaceholder}
               ></Form.Control>
-              <small style={{ color: "white" }}> 
-                <FormattedMessage id="forgotPassword"/>
+              <small style={{ color: "white" }}>
+                <FormattedMessage id="forgotPassword" />
               </small>
             </Form.Group>
             <Button className="w-100 mt-2" type="submit">
-              <FormattedMessage id="login"/>
+              <FormattedMessage id="login" />
             </Button>
           </Form>
         </Col>
