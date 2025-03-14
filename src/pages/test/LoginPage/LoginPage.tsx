@@ -17,10 +17,12 @@ import styles from "./LoginPage.module.scss";
 
 interface LocaleControlsProps {
   changeLocale: (_: string) => void;
+  locale: string;
 }
 
 const LocaleControls: FunctionComponent<LocaleControlsProps> = ({
   changeLocale,
+  locale,
 }) => {
   return (
     <div className={styles.locale_controls}>
@@ -28,10 +30,15 @@ const LocaleControls: FunctionComponent<LocaleControlsProps> = ({
         variant={"light"}
         onClick={() => changeLocale("es")}
         className={`me-2`}
+        disabled={locale === "es"}
       >
         <img src={co} className={styles.country_flag} alt="spanish" />
       </Button>
-      <Button variant={"light"} onClick={() => changeLocale("en")}>
+      <Button
+        variant={"light"}
+        onClick={() => changeLocale("en")}
+        disabled={locale === "en"}
+      >
         <img src={us} className={styles.country_flag} alt="spanish" />
       </Button>
     </div>
@@ -45,7 +52,7 @@ interface FormData {
 
 const LoginPage: FunctionComponent = () => {
   const navigate = useNavigate();
-  const { changeLocale } = useContext(LocaleContext);
+  const { changeLocale, locale } = useContext(LocaleContext);
   const intl = useIntl();
   const usernamePlaceholder = intl.formatMessage({ id: "username" });
   const passwordPlaceholder = intl.formatMessage({ id: "password" });
@@ -90,7 +97,7 @@ const LoginPage: FunctionComponent = () => {
           />
         </Col>
         <Col md={5} className={styles.login_col}>
-          <LocaleControls changeLocale={changeLocale} />
+          <LocaleControls changeLocale={changeLocale} locale={locale} />
           <Form onSubmit={handleSubmit} className={styles.login_form}>
             <Form.Group>
               <Form.Label></Form.Label>
