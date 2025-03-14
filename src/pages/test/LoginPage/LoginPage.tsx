@@ -27,12 +27,11 @@ const LoginPage: FunctionComponent = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Formulario login subido");
-    let valid = true;
+    const form = e.currentTarget;
+    const valid = form.checkValidity();
     // password > 5, <8
     const pLen = formData.password.length;
-    const passwordValid = pLen > 5 && pLen < 8;
     console.log(pLen);
-    valid = passwordValid;
 
     if (valid) {
       navigate("/test/home");
@@ -45,13 +44,18 @@ const LoginPage: FunctionComponent = () => {
           <img src={foodBag} className={styles.logo} alt="logo" />
           <h1>Too good to go</h1>
           <h2>Food wasting solution</h2>
-          <img src={plateTable} className={styles.plate_img} alt="food in table"/>
+          <img
+            src={plateTable}
+            className={styles.plate_img}
+            alt="food in table"
+          />
         </Col>
         <Col md={5} className={styles.login_col}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label></Form.Label>
               <Form.Control
+                required
                 name="username"
                 onChange={handleChange}
                 placeholder="Username"
@@ -60,11 +64,15 @@ const LoginPage: FunctionComponent = () => {
             <Form.Group>
               <Form.Label></Form.Label>
               <Form.Control
+                required
                 name="password"
                 type="password"
+                minLength={6}
+                maxLength={7}
                 onChange={handleChange}
                 placeholder="Password"
               ></Form.Control>
+              <small style={{ color: "white" }}>Forgot password?</small>
             </Form.Group>
             <Button className="w-100 mt-2" type="submit">
               Login
