@@ -138,3 +138,16 @@ Para cada vista, el proceso de pensamiento para descomponer el problema en compo
     + **useIntl()** hook para internacionalizar mensajes definidos como variables (como el título de la vista de detalle).
     + \<FormattedMessage> para internacionalizar textos otros estáticos.
 
+## Resultados
+Durante la hora de clase fue posible:
++ Desarrollar las tres vistas
++ Desarrollar el carrusel de la vista de detalle
++ Unir las vistas a través de rutas
++ Implementar un llamado al api mock para poblar la vista de detalle
++ Ubicar los componentes con una disposición similar a los mockups
++ Darle estilos y color a la mayoría de componentes
++ Validar el input de la vista de login
+
+Para la segunda parte:
++ Se implementó la internacionalización, la cual funciona al cambiar al idioma del browser
++ Se documento el desarrollo de parcial en el README
