@@ -137,9 +137,25 @@ Para cada vista, el proceso de pensamiento para descomponer el problema en compo
     + \<IntlProvider/> Proveedor en el root de la app necesario para usar los componentes y hooks necesarios
     + **useIntl()** hook para internacionalizar mensajes definidos como variables (como el título de la vista de detalle).
     + \<FormattedMessage> para internacionalizar textos otros estáticos.
+  + Adicionalmente, para cambiar dinamicamente el locale usando botones, se hizo uso de un Context Provider y el hook useContext.
 
 ![login](/readme_assets/login_ss.png)
 Puede hacer uso de los controles en la parte superior derecha de la vista login para cambiar el locale de la app entre español e inglés. También puede cambiar el idioma del browser.
+
+## Resumen de elementos de react usados
+En total, se aplicaron, entre otros, los siguientes conceptos de react para realizar la aplicación:
++ Ruteo
++ Function components
++ Props
++ Contexts y context provider
++ Componentes de React Bootstrap
++ Hooks
+  + useState
+  + useQuery
+  + useNavigate
+  + useContext
+  + useIntl
++ Reactividad con handlers / callbacks
 
 ## Resultados
 Durante la hora de clase fue posible:
