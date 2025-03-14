@@ -4,6 +4,7 @@ import styles from "./LoginPage.module.scss";
 import { useNavigate } from "react-router";
 import foodBag from "../../../assets/food_bag.png";
 import plateTable from "../../../assets/plate_table.jpg";
+import { FormattedMessage, useIntl } from "react-intl";
 // interface LoginPageProps {
 
 // }
@@ -15,6 +16,9 @@ interface FormData {
 
 const LoginPage: FunctionComponent = () => {
   const navigate = useNavigate();
+  const intl = useIntl();
+  const usernamePlaceholder = intl.formatMessage({ id: "username" });
+  const passwordPlaceholder = intl.formatMessage({ id: "password" });
   const [formData, setFormData] = useState<FormData>({
     username: "",
     password: "",
@@ -43,7 +47,9 @@ const LoginPage: FunctionComponent = () => {
         <Col md={7} className={`${styles.welcome_col}`}>
           <img src={foodBag} className={styles.logo} alt="logo" />
           <h1>Too good to go</h1>
-          <h2>Food wasting solution</h2>
+          <h2>
+            <FormattedMessage id="slogan" />
+          </h2>
           <img
             src={plateTable}
             className={styles.plate_img}
@@ -58,7 +64,7 @@ const LoginPage: FunctionComponent = () => {
                 required
                 name="username"
                 onChange={handleChange}
-                placeholder="Username"
+                placeholder={usernamePlaceholder}
               ></Form.Control>
             </Form.Group>
             <Form.Group>
@@ -70,12 +76,14 @@ const LoginPage: FunctionComponent = () => {
                 minLength={6}
                 maxLength={7}
                 onChange={handleChange}
-                placeholder="Password"
+                placeholder={passwordPlaceholder}
               ></Form.Control>
-              <small style={{ color: "white" }}>Forgot password?</small>
+              <small style={{ color: "white" }}> 
+                <FormattedMessage id="forgotPassword"/>
+              </small>
             </Form.Group>
             <Button className="w-100 mt-2" type="submit">
-              Login
+              <FormattedMessage id="login"/>
             </Button>
           </Form>
         </Col>
