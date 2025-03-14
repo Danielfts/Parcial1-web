@@ -2,6 +2,8 @@ import { ChangeEvent, FormEvent, FunctionComponent, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import styles from "./LoginPage.module.scss";
 import { useNavigate } from "react-router";
+import foodBag from "../../../assets/food_bag.png";
+import plateTable from "../../../assets/plate_table.jpg";
 // interface LoginPageProps {
 
 // }
@@ -37,17 +39,13 @@ const LoginPage: FunctionComponent = () => {
     }
   };
   return (
-    <Container className={styles.login_container}>
+    <Container fluid className={styles.login_container}>
       <Row className={styles.login_row}>
-        <Col md={7} className={`text-center justify-content-center`}>
-          <Row></Row>
-          <Row>
-            <h1>Too good to go</h1>{" "}
-          </Row>
-          <Row>
-            <h2>Food wasting solution</h2>{" "}
-          </Row>
-          <Row></Row>
+        <Col md={7} className={`${styles.welcome_col}`}>
+          <img src={foodBag} className={styles.logo} alt="logo" />
+          <h1>Too good to go</h1>
+          <h2>Food wasting solution</h2>
+          <img src={plateTable} className={styles.plate_img} alt="food in table"/>
         </Col>
         <Col md={5} className={styles.login_col}>
           <Form onSubmit={handleSubmit}>
