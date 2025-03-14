@@ -8,35 +8,41 @@ import Pretest2ProfilePage from "./pages/pretest2/ProfilePage/ProfilePage";
 import TestLoginPage from "./pages/test/LoginPage/LoginPage";
 import TestHomePage from "./pages/test/MainPage/HomePage";
 import TestDetailPage from "./pages/test/DetailPage/DetailPage";
+import { IntlProvider } from "react-intl";
 
 const queryClient = new QueryClient();
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to={"/test"}/>} />
-          <Route path="/test">
-            <Route index element={<Navigate to={"./login"} />}/>
-            <Route path="login" element={<TestLoginPage />}/>
-            <Route path="home" element={<TestHomePage />}/>
-            <Route path="menu" element={<TestDetailPage type={"menu"}/>}/>
-            <Route path="stores" element={<TestDetailPage type={"stores"}/>}/>
-            <Route path="cart" element={<TestDetailPage type={"cart"}/>}/>
-          </Route>
-          <Route path="/pretest">
-            <Route index element={<Navigate to={"./login"} />}></Route>
-            <Route path="login" element={<PretestLoginPage />} />
-            <Route path="home" element={<PretestHomePage />} />
-          </Route>
-          <Route path="/pretest2">
-            <Route index element={<Navigate to={"./home"} />}></Route>
-            <Route path="home" element={<Pretest2HomePage />} />
-            <Route path="profile" element={<Pretest2ProfilePage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </QueryClientProvider>
+    <IntlProvider locale="es" defaultLocale="en">
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Navigate to={"/test"} />} />
+            <Route path="/test">
+              <Route index element={<Navigate to={"./login"} />} />
+              <Route path="login" element={<TestLoginPage />} />
+              <Route path="home" element={<TestHomePage />} />
+              <Route path="menu" element={<TestDetailPage type={"menu"} />} />
+              <Route
+                path="stores"
+                element={<TestDetailPage type={"stores"} />}
+              />
+              <Route path="cart" element={<TestDetailPage type={"cart"} />} />
+            </Route>
+            <Route path="/pretest">
+              <Route index element={<Navigate to={"./login"} />}></Route>
+              <Route path="login" element={<PretestLoginPage />} />
+              <Route path="home" element={<PretestHomePage />} />
+            </Route>
+            <Route path="/pretest2">
+              <Route index element={<Navigate to={"./home"} />}></Route>
+              <Route path="home" element={<Pretest2HomePage />} />
+              <Route path="profile" element={<Pretest2ProfilePage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </IntlProvider>
   );
 }
 
