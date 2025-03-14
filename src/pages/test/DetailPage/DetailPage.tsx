@@ -4,6 +4,10 @@ import styles from "./DetailPage.module.scss";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
+import menu from "../../../assets/menu.png";
+import shopping_cart from "../../../assets/shopping_cart.png";
+import store from "../../../assets/store.png";
+
 interface DetailPageProps {
   type: "menu" | "stores" | "cart";
 }
@@ -29,13 +33,20 @@ const DetailPage: FunctionComponent<DetailPageProps> = ({ type }) => {
     queryFn: fetchFoodData,
   });
 
-  let title = "Menu";
+  let title = "";
+  let headerImg: string | null = "";
   switch (type) {
     case "stores":
       title = "Stores";
+      headerImg = store;
       break;
     case "cart":
       title = "Cart";
+      headerImg = shopping_cart;
+      break;
+    case "menu":
+      title = "Menu";
+      headerImg = menu;
       break;
 
     default:
@@ -43,8 +54,28 @@ const DetailPage: FunctionComponent<DetailPageProps> = ({ type }) => {
   }
   return (
     <Container fluid>
-      <Row className={`${styles.header} text-center pt-2`}>
-        <h1>{title}</h1>
+      <Row className={`${styles.header}`}>
+        <Col xs={"auto"}>
+          {headerImg && (
+            <img
+              className={styles.header_img}
+              src={headerImg}
+              alt="header logo"
+            />
+          )}
+        </Col>
+        <Col xs={"auto"}>
+          <h1>{title}</h1>
+        </Col>
+        <Col xs={"auto"}>
+          {headerImg && (
+            <img
+              className={styles.header_img}
+              src={headerImg}
+              alt="header logo"
+            />
+          )}
+        </Col>
       </Row>
       <Row className="mt-3">
         <Carousel variant="dark">

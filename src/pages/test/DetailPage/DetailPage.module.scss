@@ -1,6 +1,10 @@
 .header {
   min-height: 6rem;
   background-color: cadetblue;
+  text-align: center;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 .car_img {
@@ -14,4 +18,9 @@
   height: 100%;
   padding: 0px;
   min-height: 10rem;
+}
+
+.header_img {
+  height: 4rem;
+  object-fit: contain;
 }
